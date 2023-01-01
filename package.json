@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "url": "git@github.com:Dj-Viking/svg-drawing.git"
+  },
   "dependencies": {
     "typescript": "^4.9.4"
   }

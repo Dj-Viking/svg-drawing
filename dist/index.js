@@ -14,20 +14,12 @@ class Main {
             console.log("path info", index, pathLength, path.innerHTML);
         });
     }
-    _createBeginTime(index) {
+    static _createBeginTime(index) {
         if (index === 0) {
             return "0s";
         }
         else {
             return `a${index - 1}.end`;
-        }
-    }
-    _createAnimationTagId(index) {
-        if (index === 0) {
-            return 0;
-        }
-        else {
-            return index;
         }
     }
     _createAnimationTag(pathLength, index) {
@@ -38,9 +30,9 @@ class Main {
         //animation of next path starts when the previous animation tag ends
         return `
             <animate
-                id=a${this._createAnimationTagId(index)}
+                id=a${index}
                 attributeName='stroke-dashoffset'
-                begin='${this._createBeginTime(index)}'
+                begin='${Main._createBeginTime(index)}'
                 dur='${pathLength / speed}s'
                 from='${pathLength}'
                 to='0'

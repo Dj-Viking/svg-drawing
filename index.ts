@@ -21,19 +21,11 @@ class Main {
         });
     }
 
-    private _createBeginTime(index: number): string {
+    private static _createBeginTime(index: number): string {
         if (index === 0) {
             return "0s";
         } else {
             return `a${index - 1}.end`;
-        }
-    }
-
-    private _createAnimationTagId(index: number): number {
-        if (index === 0) {
-            return 0;
-        } else {
-            return index;
         }
     }
 
@@ -48,9 +40,9 @@ class Main {
 
         return `
             <animate
-                id=a${this._createAnimationTagId(index)}
+                id=a${index}
                 attributeName='stroke-dashoffset'
-                begin='${this._createBeginTime(index)}'
+                begin='${Main._createBeginTime(index)}'
                 dur='${pathLength / speed}s'
                 from='${pathLength}'
                 to='0'
